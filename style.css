@@ -1,0 +1,355 @@
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block;}audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;height:0;}[hidden]{display:none;}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}a:focus{outline:thin dotted;}a:active,a:hover{outline:0;}h1{font-size:2em;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:700;}dfn{font-style:italic;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace, serif;font-size:1em;}pre{white-space:pre-wrap;word-wrap:break-word;}q{quotes:\201C \201D \2018 \2019;}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-.5em;}sub{bottom:-.25em;}img{border:0;}svg:not(:root){overflow:hidden;}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em;}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}button,input{line-height:normal;}button,html input[type=button],/* 1 */
+input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}button[disabled],input[disabled]{cursor:default;}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0;}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none;}textarea{overflow:auto;vertical-align:top;}table{border-collapse:collapse;border-spacing:0;}body,figure{margin:0;}legend,button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
+
+.clearfix:after {visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+body {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 30px;
+	background-image: url("images/suffering.png");
+	background-position: 100% 80%;
+	background-repeat: no-repeat;
+	background-size: 30%;
+}
+
+.wrapper {
+	display: flex;
+	justify-content: center;
+	width: 70%;
+	height: 95vh; 
+}
+
+.arrow {
+	width: 10%;
+	display:flex;
+	align-items:center;
+	justify-content: center;
+}
+
+.content {
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+}
+
+.animation {
+	height: 60%;
+}
+
+.text {
+	height: 40%;
+	padding:5% 20%;
+	text-align: center;
+}
+
+.fa-angle-right, .fa-angle-left {
+	font-size: 70px;
+	padding:10px 20px;
+	background-color: #BD0B00;
+	border-radius:30px;
+	color:white;
+}
+
+.animation1{
+	position:relative;
+	height:100%;
+	/*display:none;*/
+}
+
+img.bomb {
+	width: 10%;
+	position:absolute;
+	top:10px;
+	left:40%;
+	animation:bomb 3s linear forwards;
+
+}
+
+svg.explosion {
+	width: 20%;
+	position:absolute;
+	bottom:-20px;
+	left:40%;
+	fill:red;
+	animation:explosion 0.9s linear forwards;
+	animation-delay: 3s;
+	opacity:0;
+}
+
+.outter-fire{
+	fill:#8C1D04;
+}
+
+.middle-fire{
+	fill:#F2C133;
+}
+
+.spark-fire{
+	fill:#D93F07;
+}
+
+.inner-fire{
+	fill:#F28627;
+}
+
+@keyframes bomb{
+	0%{
+		top:-200px;
+		opacity:0;
+
+	}
+	30%{
+		transform: scale(2);
+	}
+	50%{
+		transform: scale(3);
+	}
+	70%{
+		transform: scale(2);
+		opacity:1;
+	}
+	100%{
+		transform: scale(1);
+		top:85%;
+		opacity:0;
+	}
+}
+
+@keyframes explosion{
+	0%{
+		transform: scale(1);
+		bottom:0;
+	}
+	1%{
+		opacity:1;
+	}
+	30%{
+		bottom:15%;
+	}
+	50%{
+		transform: scale(3);
+		bottom:25%;
+	}
+	100%{
+		transform: scale(5);
+		bottom:40%;
+		opacity:1;
+	}
+}
+.animation2, .animation3, .animation4, .animation5{
+	height:100%;
+	position:relative;
+	display:none;
+}
+
+.car{
+	position:absolute;
+	left:40%;
+	top:40%;
+	animation:car 1s linear forwards;
+	animation-delay: 4.5s;
+	opacity:0;
+}
+
+@keyframes car{
+	0%{
+		transform: scale(1);
+		opacity:1;
+
+	}
+	100%{
+		transform: scale(2);
+		opacity:1;
+	}
+}
+
+
+.plane{
+	position:absolute;
+	animation: plane 4s linear forwards;
+	opacity:0;
+}
+
+@keyframes plane{
+	0%{
+		left:0;
+		bottom:0;
+		opacity:1;
+	}
+	1%{
+		left:1%;
+		top:100%;
+	}
+	100%{
+		left:100%;
+		top:0;
+	}
+}
+
+.talking{
+	position:absolute;
+	top:40%;
+	left:10%;
+}
+
+.reading{
+	position:absolute;
+	top:40%;
+	left:40%;
+
+}
+
+.weather{
+	position:absolute;
+	top:40%;
+	left:70%;
+	animation: tada 5s linear forwards;
+}
+
+.band-aid{
+	position:absolute;
+	left:40%;
+	top:30%;
+	opacity:0;
+	animation:band-aid 1.5s linear forwards;
+}
+
+@keyframes band-aid{
+	0%{
+		opacity:1;
+		transform:scale(1);
+	}
+	85%{
+		transform:scale(2);
+	}
+	99%{
+		opacity:1;
+	}
+	100%{
+		transform:scale(1);
+		left:40%;
+		top:30%;
+		opacity:0;
+	}
+}
+
+.dancing{
+	position:absolute;
+	left:40%;
+	top:30%;
+	opacity:0;
+	animation: dancing 2.5s linear forwards;
+	animation-delay:2s;
+
+}
+
+@keyframes dancing{
+	0%{
+		opacity:1;
+		transform:scale(1);
+	}
+	85%{
+		transform:scale(1.5);
+	}
+	100%{
+		transform:scale(1);
+		left:40%;
+		top:30%;
+		opacity:1;
+	}
+}
+
+.flag{
+	position:absolute;
+	width:25%;
+	top:20%;
+	left:45%;
+	animation: flag 2s linear forwards;
+}
+
+@keyframes flag{
+	0%{
+
+	}
+	99%{	
+		opacity:1;
+	}
+	100%{
+		transform:rotate(-45deg);
+		opacity:0;
+	}
+}
+
+
+.leaf{
+	position:absolute;
+	width:30%;
+	top:30%;
+	left:10%;
+	animation: leaf 2s linear forwards;
+	opacity:0;
+	animation-delay: 2.5s;
+}
+
+@keyframes leaf{
+	0%{
+		opacity:1;
+	}
+	50%{	
+	}
+	100%{
+		transform:rotate(45deg);
+		opacity:1;
+	}
+}
+
+footer p{
+	font-size:12px;
+	color:lightgray;
+	margin-left:20px;
+}
+
+footer a{
+	font-size:12px;
+	text-decoration:none;
+	color:lightgray;
+}
+/* Portrait tablet and small desktops */
+@media (max-width: 940px) {
+	body{
+		background-image:none;
+	}
+	 .wrapper{
+	 	width:90%;
+	 	margin:0 auto;
+	 }
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+	body{
+		font-size:12px;
+	}
+
+	.explosion{
+		left:25%;
+	}
+
+	.car{
+		left:30%;
+	}
+
+	.fa-angle-right, .fa-angle-left{
+		font-size:20px;
+	}
+
+	.talking, .weather, .reading{
+		width:20%;
+	}
+}
